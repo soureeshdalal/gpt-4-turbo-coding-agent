@@ -1,92 +1,85 @@
-# 🚀 O3-Mini Coding Assistant
-
-A powerful AI-driven coding assistant that utilizes **GPT-4 Turbo**, **Gemini**, and **E2B sandbox environments** to generate and execute optimized Python solutions for coding problems. The assistant efficiently handles **code generation, execution, and debugging** within a secure sandbox.
-
----
-
-## 🛠️ Features
-
-- **🧠 GPT-4 Turbo Integration**: Generates optimal Python solutions for coding problems.
-- **👀 Gemini Vision Model**: Extracts text-based coding problems from images.
-- **🔒 E2B Sandbox Execution**: Securely runs Python code, handles errors, and formats results.
-- **📜 Dynamic Programming Assistance**: Solves problems like **Knapsack**, **Sorting**, and **Graphs** with efficiency.
-- **📌 Clean & Structured Code**: Includes type hints, documentation, and edge-case handling.
-
----
-
-## 📂 Project Structure
-
-📦 O3-Mini-Coding-Agent ┣ 📜 app.py # Streamlit-based chatbot interface ┣ 📜 requirements.txt # List of dependencies ┣ 📜 README.md # Project documentation ┗ 📂 assets/ # Image assets for documentation
----
-
-## 🔧 Installation
-
-1️⃣ Clone the repository:
-```bash
-git clone https://github.com/yourusername/O3-Mini-Coding-Agent.git
-cd O3-Mini-Coding-Agent
-2️⃣ Install dependencies:
-
-bash
-Copy
-Edit
-pip install -r requirements.txt
-3️⃣ Run the chatbot:
-
-bash
-Copy
-Edit
-streamlit run app.py
-
-📌 Usage
-Enter API Keys:
-OpenAI API Key (for GPT-4 Turbo)
-Gemini API Key (for vision-based problem extraction)
-E2B API Key (for secure code execution)
-Provide Input:
-Upload an image containing a coding problem or enter a text-based problem.
-Get Optimized Code:
-The AI will generate an optimized Python solution with explanations.
-Execute Code in Sandbox:
-Securely runs code, handles errors, and formats outputs.
-
-
-📡 Model Architecture
-Text-based Code Generation: Uses GPT-4 Turbo to generate optimal Python solutions.
-Image-based Extraction: Gemini processes images, extracts coding problems, and converts them into structured prompts.
-Secure Execution: Runs code in an isolated E2B sandbox environment, preventing unwanted side effects.
-
-🔥 Example Run
-python
-Copy
-Edit
-def knapsack(values, weights, capacity):
-    """
-    Solve the 0/1 Knapsack problem using dynamic programming.
-    """
-    n = len(values)
-    dp = [0] * (capacity + 1)
-
-    for i in range(n):
-        for w in range(capacity, weights[i] - 1, -1):
-            dp[w] = max(dp[w], dp[w - weights[i]] + values[i])
-
-    return dp[capacity]
-
-# Example usage:
-values = [60, 100, 120]
-weights = [10, 20, 30]
-capacity = 50
-print(knapsack(values, weights, capacity))  # Output: 220
-📜 License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-🤝 Contributing
-Feel free to fork this repo, submit PRs, or raise issues for feature requests! 🚀
-
-🌟 Star this repository if you find it useful! ⭐
-markdown
-Copy
-Edit
-
-This format ensures **GitHub compatibility**, **easy readability**, and a **well-structured** documentation experience. 🚀 Let me know if you need any modifications!
+<article class="markdown-body">
+  <h1>GPT-4 Turbo Coding Agent</h1>
+  
+  <p>A Streamlit application that uses AI to analyze coding problems, generate Python solutions, and execute them in a sandboxed environment.</p>
+  
+  <h2>Overview</h2>
+  
+  <p>This application acts as a coding assistant that can:</p>
+  <ol>
+    <li>Extract coding problems from uploaded images using Gemini's vision capabilities</li>
+    <li>Generate optimized Python solutions using GPT-4 Turbo</li>
+    <li>Execute code in a sandboxed environment using E2B Code Interpreter</li>
+    <li>Provide execution results and error analysis</li>
+  </ol>
+  
+  <h2>Features</h2>
+  
+  <ul>
+    <li><strong>Image Recognition</strong>: Upload images containing coding problems for automatic extraction</li>
+    <li><strong>Text Input</strong>: Enter coding problems directly via text area</li>
+    <li><strong>Solution Generation</strong>: AI-powered generation of optimized Python solutions</li>
+    <li><strong>Secure Execution</strong>: Run code in an isolated sandbox environment</li>
+    <li><strong>Execution Analysis</strong>: View execution results, logs, and generated files</li>
+    <li><strong>Error Handling</strong>: Intelligent error analysis and timeout protection</li>
+  </ul>
+  
+  <h2>Requirements</h2>
+  
+  <p>The application requires the following API keys:</p>
+  <ul>
+    <li>OpenAI API Key (for GPT-4 Turbo)</li>
+    <li>Google Gemini API Key (for vision capabilities)</li>
+    <li>E2B API Key (for sandboxed code execution)</li>
+  </ul>
+  
+  <h2>Installation</h2>
+  
+  <ol>
+    <li>Clone this repository</li>
+    <li>Install dependencies:</li>
+  </ol>
+  
+  <pre><code>pip install streamlit agno e2b_code_interpreter pillow</code></pre>
+  
+  <h2>Usage</h2>
+  
+  <ol>
+    <li>Run the Streamlit app:</li>
+  </ol>
+  
+  <pre><code>streamlit run app.py</code></pre>
+  
+  <ol start="2">
+    <li>Enter your API keys in the sidebar</li>
+    <li>Choose one of the following:
+      <ul>
+        <li>Upload an image containing a coding problem</li>
+        <li>Type your coding problem in the text area</li>
+      </ul>
+    </li>
+    <li>Click "Generate & Execute Solution" to process</li>
+    <li>View the solution and execution results</li>
+  </ol>
+  
+  <h2>Limitations</h2>
+  
+  <ul>
+    <li>Code execution timeout is set to 30 seconds</li>
+    <li>Only one input method (image or text) can be used at a time</li>
+    <li>The sandbox environment is reset for each execution</li>
+  </ul>
+  
+  <h2>Dependencies</h2>
+  
+  <ul>
+    <li>Streamlit: Web application framework</li>
+    <li>Agno: AI agent framework</li>
+    <li>E2B Code Interpreter: Sandboxed code execution environment</li>
+    <li>PIL (Pillow): Image processing library</li>
+  </ul>
+  
+  <h2>Security Note</h2>
+  
+  <p>All code is executed in an isolated sandbox environment for security.</p>
+</article>
