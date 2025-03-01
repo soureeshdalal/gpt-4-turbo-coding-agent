@@ -1,0 +1,6 @@
+streamlit
+e2b-code-interpreter
+agno
+Pillow
+openai
+google-genai
